@@ -83,3 +83,5 @@ button,.datePicker,input,textarea{border-color:var(--line)!important}button{bord
 .optionalLabel{font-size:9px;font-weight:700;letter-spacing:.06em;color:#999;margin-left:6px}.clientPhoneMissing{margin-top:4px;color:#888;font-size:14px;font-weight:700}
 
 .bookingTakenBy{margin-top:10px;font-size:11px;color:#777}.bookingTakenBy b{color:#444}.historyTakenBy{display:block;margin-top:4px;font-size:10px;font-style:normal;color:#888}
+
+.customerNameWrap{position:relative}.customerSuggestions{position:absolute;left:0;right:0;top:calc(100% + 6px);z-index:30;background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:0 14px 34px rgba(30,25,10,.12);overflow:hidden}.customerSuggestions button{width:100%;min-height:0;padding:12px 14px;border:0!important;border-radius:0;text-align:left;background:#fff}.customerSuggestions button+button{border-top:1px solid var(--line)!important}.customerSuggestions button:hover{background:#fffdf3}.customerSuggestions b,.customerSuggestions span{display:block}.customerSuggestions b{font-size:14px}.customerSuggestions span{margin-top:3px;font-size:11px;color:#777;font-weight:400}
