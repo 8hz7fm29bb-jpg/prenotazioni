@@ -6,13 +6,15 @@ export default function BookingIcon(){
       color:"#fff",fontFamily:"Arial, Helvetica, sans-serif",borderRadius:"18%"
     }}>
       <div style={{
-        display:"flex",fontSize:190,fontWeight:900,lineHeight:0.82,
-        letterSpacing:-18,marginLeft:-8
+        display:"flex",fontSize:176,fontWeight:900,lineHeight:0.82,
+        letterSpacing:-14
       }}>22</div>
-      <div style={{width:310,height:14,background:"#fff",marginTop:30,display:"flex"}}/>
       <div style={{
-        display:"flex",fontSize:48,fontWeight:700,letterSpacing:14,
-        marginTop:18,marginLeft:14
+        width:292,height:12,background:"#fff",marginTop:28,display:"flex"
+      }}/>
+      <div style={{
+        display:"flex",fontSize:34,fontWeight:800,lineHeight:1,
+        letterSpacing:8,marginTop:18,marginLeft:8,whiteSpace:"nowrap"
       }}>BOOKING</div>
     </div>
   );
