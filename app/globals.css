@@ -22,3 +22,12 @@ body{background:linear-gradient(180deg,#fffdf6 0,#f4f1e9 100%);color:var(--ink)}
 .card{border:1px solid rgba(0,0,0,.04);box-shadow:0 12px 40px rgba(35,31,20,.07)}
 button,.datePicker,input,textarea{border-color:var(--line)!important}button{border-radius:11px}.selected,.confirm{background:var(--accent)!important;color:var(--ink)!important;border-color:var(--accent)!important}.confirm{box-shadow:0 6px 18px rgba(220,175,0,.18)}.summary div{background:#fffdf7}.clientId{background:var(--accent2);padding:5px 8px;border-radius:7px;color:var(--ink)}
 @media(max-width:700px){.appHeader{padding:11px 14px}.appHeader .brand span{display:none}.appHeader .mainNav{gap:4px}.appHeader .mainNav a,.appHeader .account{min-height:40px;padding:0 9px;font-size:9px}.appHeader .mainNav a:first-child{font-size:0}.appHeader .mainNav a:first-child:after{content:"+";font-size:20px;font-weight:700}}
+
+.datePicker:not(.selected){color:#0a84ff!important}
+@media(max-width:700px){
+ .appHeader{display:grid!important;grid-template-columns:1fr!important;gap:10px!important;padding:12px 14px!important}
+ .appHeader .brand{align-items:flex-start}.appHeader .brand b{font-size:16px}
+ .appHeader .mainNav{display:grid!important;grid-template-columns:52px 1.35fr .9fr .9fr;width:100%;gap:6px!important}
+ .appHeader .mainNav a,.appHeader .account{width:100%;min-width:0!important;padding:0 6px!important;font-size:9px!important;letter-spacing:.02em;white-space:nowrap}
+ .appHeader .mainNav a:first-child{font-size:0!important}.appHeader .mainNav a:first-child:after{font-size:20px}
+}
