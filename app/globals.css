@@ -3,3 +3,5 @@
 @media(max-width:600px){.row input[type="date"]{flex-basis:100%;min-height:48px;font-size:16px;font-weight:700}.numberEdit{width:100%;height:48px}.dietFlags button{font-size:13px;padding:0 6px}}
 
 @media(max-width:600px){.row>button,.row>input[type="date"]{height:48px;min-height:48px;max-height:48px;margin:0;line-height:48px}.row>input[type="date"]{padding-top:0;padding-bottom:0}}
+
+.datePicker{position:relative;flex:1;min-height:48px;border:1px solid #d7d4ce;border-radius:9px;display:flex;align-items:center;padding:0 14px;font-size:16px;font-weight:700;letter-spacing:0;margin:0;color:#181818;overflow:hidden}.datePicker input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer}.datePicker span{pointer-events:none}@media(max-width:600px){.datePicker{flex-basis:100%;height:48px;min-height:48px;justify-content:center}}
