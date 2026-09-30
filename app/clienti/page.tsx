@@ -1,0 +1,6 @@
+"use client";
+import {useEffect,useState} from "react"; import {supabase} from "../../lib/supabase";
+type C={id:string;customer_code:string;name:string;phone:string;allergies_requests:string|null;acquisition_channels:{name:string}|null};
+export default function Clienti(){const [q,setQ]=useState("");const [rows,setRows]=useState<C[]>([]);
+useEffect(()=>{(async()=>{let x=supabase.from("customers").select("id,customer_code,name,phone,allergies_requests,acquisition_channels(name)").order("name");if(q.trim())x=x.or("name.ilike.%"+q+"%,phone.ilike.%"+q+"%,customer_code.ilike.%"+q+"%");const {data}=await x;setRows((data||[]) as unknown as C[])})()},[q]);
+return <main><header><div><b>CLIENTI</b><span>Officina22</span></div><nav><a href="/">+ NUOVA</a><a href="/prenotazioni">PRENOTAZIONI</a></nav></header><section className="card"><div className="agendaTitle"><div><h1>Clienti</h1><p>Archivio e storico</p></div></div><input className="full customerSearch" value={q} onChange={e=>setQ(e.target.value)} placeholder="Cerca nome, telefono o ID cliente"/><div className="customerList">{rows.map(c=><a href={"/clienti/"+c.id} className="customerRow" key={c.id}><div><b>{c.name}</b><span>{c.customer_code} · {c.phone}</span></div><div className="customerMeta">{c.acquisition_channels?.name||""}<strong>›</strong></div></a>)}</div></section></main>}
