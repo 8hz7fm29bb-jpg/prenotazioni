@@ -5,15 +5,25 @@ export const metadata={
   title:"22 Booking",
   description:"Gestione prenotazioni Officina22",
   applicationName:"22 Booking",
+  manifest:"/manifest.webmanifest",
   appleWebApp:{
     capable:true,
     title:"22 Booking",
     statusBarStyle:"default"
   },
   icons:{
-    icon:"/icon.png",
-    apple:"/apple-icon.png"
+    icon:[
+      {url:"/favicon.png",type:"image/png",sizes:"180x180"},
+      {url:"/icon-512.png",type:"image/png",sizes:"512x512"}
+    ],
+    apple:[
+      {url:"/apple-touch-icon.png",type:"image/png",sizes:"180x180"}
+    ]
   }
+};
+
+export const viewport={
+  themeColor:"#2EB1E8"
 };
 
 export default function RootLayout({children}:{children:React.ReactNode}){
