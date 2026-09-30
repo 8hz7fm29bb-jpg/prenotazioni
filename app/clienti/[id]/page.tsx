@@ -4,7 +4,19 @@ import AppHeader from "../../AppHeader";
 type C={id:string;customer_code:string;name:string;phone:string;acquisition_channel_id:number|null;allergies_requests:string|null;notes:string|null};type R={id:string;reservation_date:string;service:string;guests:number;baby:number;status:string};
 export default function Cliente(){const {id}=useParams<{id:string}>();const [c,setC]=useState<C|null>(null);const [rows,setRows]=useState<R[]>([]);const [edit,setEdit]=useState(false);const [msg,setMsg]=useState("");
 async function load(){const {data}=await supabase.from("customers").select("*").eq("id",id).single();setC(data);const r=await supabase.from("reservations").select("id,reservation_date,service,guests,baby,status").eq("customer_id",id).order("reservation_date",{ascending:false});setRows(r.data||[])}useEffect(()=>{load()},[id]);
-async function save(){if(!c)return;const {error}=await supabase.from("customers").update({name:c.name,phone:c.phone,allergies_requests:c.allergies_requests,notes:c.notes}).eq("id",id);setMsg(error?error.message:"Dati cliente aggiornati");if(!error)setEdit(false)}
+async function save(){
+ if(!c)return;
+ setMsg("");
+ const phone=c.phone.trim();
+ const {data:other}=await supabase.from("customers").select("id,name,customer_code").eq("phone",phone).neq("id",id).maybeSingle();
+ if(other){
+   setMsg("Questo numero è già associato a "+other.name+" ("+other.customer_code+").");
+   return;
+ }
+ const {error}=await supabase.from("customers").update({name:c.name.trim(),phone,allergies_requests:c.allergies_requests,notes:c.notes}).eq("id",id);
+ setMsg(error?"Impossibile salvare le modifiche.": "Dati cliente aggiornati");
+ if(!error)setEdit(false)
+}
 async function deleteCustomer(){
  if(!c)return;
  const count=rows.length;
