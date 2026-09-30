@@ -40,3 +40,5 @@ button,.datePicker,input,textarea{border-color:var(--line)!important}button{bord
 /* Selection typography */
 .row>button,.two>button,.people>button,.datePicker{color:var(--ink)!important;font-weight:400!important}
 .row>button.selected,.two>button.selected,.people>button.selected,.datePicker.selected{color:#0a84ff!important;font-weight:800!important}
+
+.datePicker:not(.selected){color:var(--ink)!important;font-weight:400!important}
