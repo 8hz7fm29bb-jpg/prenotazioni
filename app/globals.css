@@ -31,3 +31,8 @@ button,.datePicker,input,textarea{border-color:var(--line)!important}button{bord
  .appHeader .mainNav a,.appHeader .account{width:100%;min-width:0!important;padding:0 6px!important;font-size:9px!important;letter-spacing:.02em;white-space:nowrap}
  .appHeader .mainNav a:first-child{font-size:0!important}.appHeader .mainNav a:first-child:after{font-size:20px}
 }
+
+/* Selected controls: outline only */
+.selected{background:#fff!important;color:#0a84ff!important;border:3px solid var(--accent)!important}
+.datePicker.selected{background:#fff!important;color:#0a84ff!important;border:3px solid var(--accent)!important}
+.people .selected,.baby .selected{background:#fff!important;color:#0a84ff!important;border:3px solid var(--accent)!important}
