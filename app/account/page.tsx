@@ -12,7 +12,7 @@ export default function Account(){
   const [username,setUsername]=useState("");
   const [password,setPassword]=useState("");
   const [role,setRole]=useState<"operatore"|"amministratore">("operatore");
-  const [saving,setSaving]=useState(false);
+  const [saving,setSaving]=useState(false); const [editing,setEditing]=useState<P|null>(null); const [editUsername,setEditUsername]=useState(""); const [editPassword,setEditPassword]=useState(""); const [editRole,setEditRole]=useState<"operatore"|"amministratore">("operatore");
 
   async function load(){
     const {data:{user}}=await supabase.auth.getUser();
@@ -52,6 +52,30 @@ export default function Account(){
     await load();
   }
 
+  function startEdit(p:P){
+    setEditing(p);
+    setEditUsername(p.username);
+    setEditPassword("");
+    setEditRole(p.role==="amministratore"?"amministratore":"operatore");
+    setMsg("");
+  }
+
+  async function saveEdit(e:FormEvent){
+    e.preventDefault();
+    if(!editing||me?.role!=="amministratore")return;
+    setSaving(true);
+    setMsg("");
+    const {data,error}=await supabase.functions.invoke("update-account",{
+      body:{id:editing.id,username:editUsername.trim(),password:editPassword,role:editRole}
+    });
+    setSaving(false);
+    if(error||data?.error){setMsg(data?.error||"Impossibile modificare l'account");return}
+    setMsg("Account aggiornato");
+    setEditing(null);
+    setEditPassword("");
+    await load();
+  }
+
   async function logout(){
     await supabase.auth.signOut();
     location.href="/login";
@@ -82,12 +106,45 @@ export default function Account(){
               <span>{p.role.toUpperCase()}</span>
             </div>
             <div className={p.active?"statusOn":"statusOff"}>{p.active?"ATTIVO":"DISATTIVATO"}</div>
-            {me?.role==="amministratore"&&p.id!==me.id
-              ? <button className="accountToggle" onClick={()=>toggle(p)}>{p.active?"DISATTIVA":"RIATTIVA"}</button>
+            {me?.role==="amministratore"
+              ? <div className="accountRowActions">
+                  <button className="accountEdit" onClick={()=>startEdit(p)}>MODIFICA</button>
+                  {p.id!==me.id?<button className="accountToggle" onClick={()=>toggle(p)}>{p.active?"DISATTIVA":"RIATTIVA"}</button>:<span className="accountSelf">TU</span>}
+                </div>
               : <span className="accountSelf">{p.id===me?.id?"TU":""}</span>}
           </article>)}
         </div>
       </section>
+
+      {me?.role==="amministratore"&&editing&&<section className="accountSection editAccount">
+        <div className="sectionHeading">
+          <div>
+            <h2>Modifica account</h2>
+            <p>Puoi cambiare USER, ruolo e, se necessario, impostare una nuova password.</p>
+          </div>
+        </div>
+        <form onSubmit={saveEdit}>
+          <div className="accountFields">
+            <div>
+              <label>USER</label>
+              <input className="full" autoCapitalize="none" autoComplete="off" value={editUsername} onChange={e=>setEditUsername(e.target.value)} required minLength={3}/>
+            </div>
+            <div>
+              <label>NUOVA PASSWORD <span className="optionalLabel">FACOLTATIVA</span></label>
+              <input className="full" type="password" autoComplete="new-password" value={editPassword} onChange={e=>setEditPassword(e.target.value)} placeholder="Lascia vuoto per non cambiarla"/>
+            </div>
+          </div>
+          <label>RUOLO</label>
+          <div className="roleChoice">
+            <button type="button" className={editRole==="operatore"?"selected":""} onClick={()=>setEditRole("operatore")}>OPERATORE</button>
+            <button type="button" className={editRole==="amministratore"?"selected":""} onClick={()=>setEditRole("amministratore")}>AMMINISTRATORE</button>
+          </div>
+          <div className="editAccountActions">
+            <button type="button" onClick={()=>setEditing(null)}>ANNULLA</button>
+            <button className="confirm" type="submit" disabled={saving}>{saving?"SALVATAGGIO…":"SALVA MODIFICHE"}</button>
+          </div>
+        </form>
+      </section>}
 
       {me?.role==="amministratore"&&<section className="accountSection newAccount">
         <div className="sectionHeading">
