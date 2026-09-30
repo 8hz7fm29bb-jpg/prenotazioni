@@ -81,3 +81,5 @@ button,.datePicker,input,textarea{border-color:var(--line)!important}button{bord
 @media(max-width:600px){.clientHeadActions{flex-direction:column;align-items:stretch}.clientHeadActions button{min-height:40px}}
 
 .optionalLabel{font-size:9px;font-weight:700;letter-spacing:.06em;color:#999;margin-left:6px}.clientPhoneMissing{margin-top:4px;color:#888;font-size:14px;font-weight:700}
+
+.bookingTakenBy{margin-top:10px;font-size:11px;color:#777}.bookingTakenBy b{color:#444}.historyTakenBy{display:block;margin-top:4px;font-size:10px;font-style:normal;color:#888}
