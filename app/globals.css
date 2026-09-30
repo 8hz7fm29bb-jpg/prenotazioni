@@ -88,3 +88,6 @@ button,.datePicker,input,textarea{border-color:var(--line)!important}button{bord
 
 .accountRowActions{display:flex;gap:6px;align-items:center;justify-content:flex-end}.accountRowActions button{min-height:38px;padding:0 9px;font-size:10px}.accountEdit{color:#0a84ff}.editAccountActions{display:grid;grid-template-columns:1fr 2fr;gap:8px;margin-top:16px}.editAccountActions .confirm{margin-top:0}
 @media(max-width:600px){.accountRow{grid-template-columns:minmax(0,1fr) auto}.accountRowActions{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr}.accountSelf{display:flex;align-items:center;justify-content:center;min-height:38px}.editAccountActions{grid-template-columns:1fr}}
+
+.successOverlay{position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;pointer-events:none;background:rgba(255,255,255,.18)}
+.successBox{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px 28px;box-shadow:0 18px 50px rgba(0,0,0,.14);color:#1f8f3a;font-size:20px;font-weight:800;text-align:center;max-width:calc(100vw - 32px)}
