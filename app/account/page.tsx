@@ -1,0 +1,9 @@
+"use client";
+import {useEffect,useState} from "react";import AppHeader from "../AppHeader";import {supabase} from "../../lib/supabase";
+type P={id:string;username:string;role:string;active:boolean};
+export default function Account(){const [rows,setRows]=useState<P[]>([]);const [me,setMe]=useState<P|null>(null);const [msg,setMsg]=useState("");
+async function load(){const {data:{user}}=await supabase.auth.getUser();if(!user){location.href="/login";return}const {data:m}=await supabase.from("profiles").select("id,username,role,active").eq("id",user.id).single();setMe(m);const {data}=await supabase.from("profiles").select("id,username,role,active").order("username");setRows((data||[]) as P[])}
+useEffect(()=>{load()},[]);
+async function toggle(p:P){if(me?.role!=="amministratore"||p.id===me.id)return;const {error}=await supabase.from("profiles").update({active:!p.active}).eq("id",p.id);setMsg(error?error.message:"Account aggiornato");load()}
+async function logout(){await supabase.auth.signOut();location.href="/login"}
+return <main><AppHeader/><section className="card"><div className="accountTitle"><div><h1>Account</h1><p>{me?.username} · {me?.role?.toUpperCase()}</p></div><button onClick={logout}>ESCI</button></div><div className="accountList">{rows.map(p=><article className="accountRow" key={p.id}><div><b>{p.username}</b><span>{p.role.toUpperCase()}</span></div><div className={p.active?"statusOn":"statusOff"}>{p.active?"ATTIVO":"DISATTIVATO"}</div>{me?.role==="amministratore"&&p.id!==me.id&&<button onClick={()=>toggle(p)}>{p.active?"DISATTIVA":"RIATTIVA"}</button>}</article>)}</div>{me?.role==="amministratore"&&<section className="newAccount"><h2>Nuovo account</h2><p>Creazione account in configurazione sicura.</p></section>}{msg&&<p className="msg">{msg}</p>}</section></main>}
