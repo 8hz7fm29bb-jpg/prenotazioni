@@ -50,3 +50,28 @@ button,.datePicker,input,textarea{border-color:var(--line)!important}button{bord
 .archiveDays{display:flex;gap:8px;overflow-x:auto;padding:2px 0 12px}.archiveDays button{flex:0 0 auto;background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 15px;font-weight:400}.archiveDays button.selected{font-weight:800!important}.archiveEmpty{color:var(--muted);padding:8px 0 12px}
 
 .bookingActions{display:flex;gap:8px;margin-top:14px}.bookingActions button{background:#fff;border:1px solid var(--line);border-radius:10px;padding:9px 13px;font-size:12px;font-weight:700}.bookingActions .deleteBooking{color:#a51d1d}
+
+
+/* Account management */
+.accountCard{max-width:760px}
+.accountTitle{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;padding-bottom:24px;border-bottom:1px solid var(--line)}
+.accountTitle h1{margin-bottom:8px}
+.currentAccount{margin:0;color:#555;font-size:15px}.currentAccount span{color:#aaa;margin:0 4px}
+.logoutBtn{min-width:92px}
+.accountSection{padding-top:28px}.accountSection+.accountSection{margin-top:26px;border-top:1px solid var(--line)}
+.sectionHeading{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;margin-bottom:16px}
+.sectionHeading h2{font-size:22px;margin:0 0 5px}.sectionHeading p{margin:0;color:var(--muted);font-size:13px}
+.accountList{display:grid;gap:8px}
+.accountRow{display:grid;grid-template-columns:minmax(0,1fr) 115px 110px;align-items:center;gap:12px;border:1px solid var(--line);border-radius:12px;padding:13px 14px;background:#fff}
+.accountIdentity{min-width:0}.accountIdentity b,.accountIdentity span{display:block}.accountIdentity b{font-size:16px;overflow:hidden;text-overflow:ellipsis}.accountIdentity span{margin-top:4px;font-size:10px;letter-spacing:.08em;color:#777}
+.statusOn,.statusOff{font-size:10px;font-weight:800;letter-spacing:.07em;text-align:center}.statusOn{color:#287a3d}.statusOff{color:#a51d1d}
+.accountToggle{min-height:38px;padding:0 10px;font-size:10px}.accountSelf{font-size:10px;font-weight:800;color:#999;text-align:center}
+.newAccount label{margin-top:0}.accountFields{display:grid;grid-template-columns:1fr 1fr;gap:12px}.accountFields label{margin-bottom:8px}
+.roleChoice{display:grid;grid-template-columns:1fr 1fr;gap:8px}.roleChoice button{font-size:12px;font-weight:700}
+.createAccountBtn{margin-top:16px}.createAccountBtn:disabled{opacity:.6;cursor:default}.accountMsg{margin:18px 0 0}
+@media(max-width:600px){
+ .accountCard{padding-top:22px}
+ .accountTitle{align-items:center}.logoutBtn{min-width:78px}
+ .accountRow{grid-template-columns:minmax(0,1fr) auto}.accountRow .statusOn,.accountRow .statusOff{grid-column:2}.accountToggle,.accountSelf{grid-column:1/-1;width:100%}
+ .accountFields{grid-template-columns:1fr}.sectionHeading h2{font-size:20px}
+}
