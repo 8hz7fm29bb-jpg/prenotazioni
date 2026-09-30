@@ -44,3 +44,5 @@ button,.datePicker,input,textarea{border-color:var(--line)!important}button{bord
 .datePicker:not(.selected){color:var(--ink)!important;font-weight:400!important}
 
 .loginPage{min-height:100vh;display:grid;place-items:center;padding:20px}.loginCard{width:min(440px,100%);background:#fff;border:1px solid var(--line);border-radius:22px;padding:34px;box-shadow:0 16px 50px rgba(30,25,10,.08)}.loginBrand{display:flex;flex-direction:column;margin-bottom:35px}.loginBrand b{font-size:18px}.loginBrand span{font-size:12px;color:#777}.loginCard h1{font-size:34px;margin-bottom:28px}.loginCard label{display:block;margin-top:18px}.loginCard .confirm{width:100%;margin-top:28px}
+
+.bookingCustomer{display:block!important;color:var(--ink)!important;white-space:nowrap!important;font-weight:800!important}.bookingCustomer a{color:inherit!important}
