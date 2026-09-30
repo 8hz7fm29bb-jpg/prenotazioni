@@ -10,6 +10,15 @@ export const metadata={
     capable:true,
     title:"22 Booking",
     statusBarStyle:"default"
+  },
+  icons:{
+    icon:[
+      {url:"/favicon.png?v=6",type:"image/png",sizes:"180x180"},
+      {url:"/icon-512.png?v=6",type:"image/png",sizes:"512x512"}
+    ],
+    apple:[
+      {url:"/apple-touch-icon.png?v=6",type:"image/png",sizes:"180x180"}
+    ]
   }
 };
 
