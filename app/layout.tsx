@@ -6,13 +6,13 @@ export const metadata: Metadata = {
   title: "22 Booking",
   description: "Gestione prenotazioni Officina22",
   applicationName: "22 Booking",
-  manifest: "/manifest.webmanifest?v=10",
+  manifest: "/manifest.webmanifest?v=11",
   icons: {
     icon: [
-      { url: "/api/app-icon?v=10", sizes: "512x512", type: "image/png" },
+      { url: "/api/apple-icon?v=11", sizes: "180x180", type: "image/png" },
     ],
     apple: [
-      { url: "/api/apple-icon?v=10", sizes: "180x180", type: "image/png" },
+      { url: "/api/apple-icon?v=11", sizes: "180x180", type: "image/png" },
     ],
   },
   appleWebApp: {
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#22AEEF",
+  themeColor: "#7CFF45",
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
