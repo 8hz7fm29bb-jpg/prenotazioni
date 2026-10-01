@@ -98,3 +98,10 @@ button,.datePicker,input,textarea{border-color:var(--line)!important}button{bord
 @media(max-width:600px){
   .card > .confirm{margin-bottom:calc(48px + env(safe-area-inset-bottom))}
 }
+
+.appHeader .mainNav a.activeMenu,
+.appHeader .account.activeMenu{
+  background:var(--accent)!important;
+  border-color:var(--accent)!important;
+  color:var(--ink)!important;
+}
