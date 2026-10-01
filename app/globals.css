@@ -91,3 +91,10 @@ button,.datePicker,input,textarea{border-color:var(--line)!important}button{bord
 
 .successOverlay{position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;pointer-events:none;background:rgba(255,255,255,.18)}
 .successBox{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px 28px;box-shadow:0 18px 50px rgba(0,0,0,.14);color:#1f8f3a;font-size:20px;font-weight:800;text-align:center;max-width:calc(100vw - 32px)}
+
+
+/* Spazio inferiore pulsante conferma prenotazione */
+.card > .confirm{margin-bottom:32px}
+@media(max-width:600px){
+  .card > .confirm{margin-bottom:calc(48px + env(safe-area-inset-bottom))}
+}
