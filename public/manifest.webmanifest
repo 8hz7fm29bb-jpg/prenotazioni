@@ -7,17 +7,11 @@
   "scope": "/",
   "display": "standalone",
   "background_color": "#ffffff",
-  "theme_color": "#22AEEF",
+  "theme_color": "#7CFF45",
   "icons": [
     {
-      "src": "/api/apple-icon?v=10",
+      "src": "/api/apple-icon?v=11",
       "sizes": "180x180",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "/api/app-icon?v=10",
-      "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
     }
