@@ -147,3 +147,8 @@ button,.datePicker,input,textarea{border-color:var(--line)!important}button{bord
   .agenda:has(.bookingList.printOneColumn) .summary{width:150mm!important;max-width:100%!important;margin-left:auto!important;margin-right:auto!important}
   .agenda:has(.bookingList.printTwoColumns) .summary{width:100%!important;max-width:none!important;margin-left:0!important;margin-right:0!important}
 }
+
+
+/* Flag arrivo cliente */
+.booking{position:relative;padding-left:52px}.arrivalCheck{position:absolute;left:15px;top:15px;margin:0!important;display:block!important}.arrivalCheck input{position:absolute;opacity:0;pointer-events:none}.arrivalCheck span{display:block;width:24px;height:24px;border:2px solid #181818;border-radius:4px;background:#fff;cursor:pointer}.arrivalCheck input:checked+span:after{content:"✓";display:flex;align-items:center;justify-content:center;width:100%;height:100%;font-size:19px;font-weight:900;color:#181818}
+@media print{.booking{padding-left:12mm!important}.arrivalCheck{display:block!important;left:3mm!important;top:3mm!important}.arrivalCheck span{width:6mm!important;height:6mm!important;border:1.2pt solid #000!important;border-radius:1mm!important}.arrivalCheck input:checked+span:after{color:#000!important;font-size:15px!important}}
