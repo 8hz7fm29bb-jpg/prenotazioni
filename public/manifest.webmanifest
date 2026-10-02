@@ -10,14 +10,14 @@
   "theme_color": "#ff0000",
   "icons": [
     {
-      "src": "/api/app-icon?v=14",
-      "sizes": "512x512",
+      "src": "/api/apple-icon?v=16",
+      "sizes": "180x180",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/api/app-icon?v=14",
-      "sizes": "512x512",
+      "src": "/api/apple-icon?v=16",
+      "sizes": "180x180",
       "type": "image/png",
       "purpose": "maskable"
     }
