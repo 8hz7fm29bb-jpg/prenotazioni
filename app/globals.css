@@ -160,3 +160,5 @@ button,.datePicker,input,textarea{border-color:var(--line)!important}button{bord
   .booking .arrivalCheck span{display:block!important;visibility:visible!important;width:6mm!important;height:6mm!important;border:1.2pt solid #000!important;background:#fff!important;border-radius:1mm!important}
   .booking .arrivalCheck input{position:absolute!important;opacity:0!important}
 }
+
+.customerGeneralNotes{white-space:pre-wrap;overflow-wrap:anywhere;margin:8px 0 16px;font-size:14px}.historyRequests,.historyNotes{display:block;margin-top:5px;white-space:pre-wrap;overflow-wrap:anywhere}.historyRequests{font-size:12px}.historyNotes{color:#555}
