@@ -140,3 +140,10 @@ button,.datePicker,input,textarea{border-color:var(--line)!important}button{bord
   .bookingList.printOneColumn{display:grid!important;grid-template-columns:minmax(0,150mm)!important;justify-content:center!important;column-gap:0!important}
   .bookingList.printTwoColumns{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;column-gap:5mm!important;row-gap:2mm!important;align-items:start!important}
 }
+
+
+/* Allinea i 3 riquadri riepilogo alla larghezza effettiva delle prenotazioni in stampa */
+@media print{
+  .agenda:has(.bookingList.printOneColumn) .summary{width:150mm!important;max-width:100%!important;margin-left:auto!important;margin-right:auto!important}
+  .agenda:has(.bookingList.printTwoColumns) .summary{width:100%!important;max-width:none!important;margin-left:0!important;margin-right:0!important}
+}
