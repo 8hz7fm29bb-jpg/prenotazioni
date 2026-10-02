@@ -152,3 +152,11 @@ button,.datePicker,input,textarea{border-color:var(--line)!important}button{bord
 /* Flag arrivo cliente */
 .booking{position:relative;padding-left:52px}.arrivalCheck{position:absolute;left:15px;top:15px;margin:0!important;display:block!important}.arrivalCheck input{position:absolute;opacity:0;pointer-events:none}.arrivalCheck span{display:block;width:24px;height:24px;border:2px solid #181818;border-radius:4px;background:#fff;cursor:pointer}.arrivalCheck input:checked+span:after{content:"✓";display:flex;align-items:center;justify-content:center;width:100%;height:100%;font-size:19px;font-weight:900;color:#181818}
 @media print{.booking{padding-left:12mm!important}.arrivalCheck{display:block!important;left:3mm!important;top:3mm!important}.arrivalCheck span{width:6mm!important;height:6mm!important;border:1.2pt solid #000!important;border-radius:1mm!important}.arrivalCheck input:checked+span:after{color:#000!important;font-size:15px!important}}
+
+
+/* Mantieni sempre visibile il riquadro ARRIVATO nella stampa */
+@media print{
+  .booking .arrivalCheck{display:block!important;visibility:visible!important;position:absolute!important;left:3mm!important;top:3mm!important;width:6mm!important;height:6mm!important;margin:0!important;padding:0!important}
+  .booking .arrivalCheck span{display:block!important;visibility:visible!important;width:6mm!important;height:6mm!important;border:1.2pt solid #000!important;background:#fff!important;border-radius:1mm!important}
+  .booking .arrivalCheck input{position:absolute!important;opacity:0!important}
+}
