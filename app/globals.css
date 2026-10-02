@@ -105,3 +105,25 @@ button,.datePicker,input,textarea{border-color:var(--line)!important}button{bord
   border-color:var(--accent)!important;
   color:var(--ink)!important;
 }
+
+
+/* Stampa prenotazioni giornaliere: layout compatto */
+@media print{
+  @page{margin:10mm}
+  .agenda{padding:0!important}
+  .agendaTitle h1{margin:0 0 2mm!important;font-size:20px!important}
+  .agendaTitle p{margin:0 0 4mm!important;font-size:12px!important}
+  .agenda .archiveDays,.agenda>label,.agenda>.row,.agenda>.two{display:none!important}
+  .summary{margin:0 0 4mm!important;gap:4mm!important}
+  .summary div{padding:2mm 3mm!important;border-radius:0!important}
+  .summary strong{font-size:18px!important}
+  .summary span{margin-top:1mm!important;font-size:8px!important}
+  .bookingList{gap:2mm!important}
+  .booking{padding:3mm!important;border-radius:0!important;break-inside:avoid;page-break-inside:avoid}
+  .booking h2{font-size:14px!important}
+  .counts{font-size:11px!important}
+  .phone{margin-top:1mm!important;font-size:11px!important}
+  .tags,.bookingNotes,.bookingTakenBy{margin-top:1.5mm!important;font-size:10px!important}
+  .bookingNotes{margin-bottom:0!important}
+  .bookingActions{display:none!important}
+}
