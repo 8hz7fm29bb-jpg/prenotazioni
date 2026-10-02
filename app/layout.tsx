@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "22 Booking",
   description: "Gestione prenotazioni Officina22",
   applicationName: "22 Booking",
-  manifest: "/manifest.webmanifest?v=20261002-r2",
+  manifest: "/manifest.webmanifest?v=20261002-r3",
   icons: {
     icon: [
       { url: "/icons/booking-20261002-r2-192.png", sizes: "192x192", type: "image/png" },
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#ff0000",
+  themeColor: "#f2f2f2",
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
