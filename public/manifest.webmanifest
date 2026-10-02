@@ -10,13 +10,13 @@
   "theme_color": "#ff0000",
   "icons": [
     {
-      "src": "/api/apple-icon?v=18",
+      "src": "/api/apple-icon?v=19",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/api/apple-icon?v=18",
+      "src": "/api/apple-icon?v=19",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
