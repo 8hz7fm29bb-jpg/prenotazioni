@@ -109,7 +109,7 @@ button,.datePicker,input,textarea{border-color:var(--line)!important}button{bord
 
 /* Stampa prenotazioni giornaliere: layout compatto */
 @media print{
-  @page{margin:10mm}
+  @page{size:A4 portrait;margin:10mm}
   .agenda{padding:0!important}
   .agendaTitle h1{margin:0 0 2mm!important;font-size:20px!important}
   .agendaTitle p{margin:0 0 4mm!important;font-size:12px!important}
@@ -162,3 +162,10 @@ button,.datePicker,input,textarea{border-color:var(--line)!important}button{bord
 }
 
 .customerGeneralNotes{white-space:pre-wrap;overflow-wrap:anywhere;margin:8px 0 16px;font-size:14px}.historyRequests,.historyNotes{display:block;margin-top:5px;white-space:pre-wrap;overflow-wrap:anywhere}.historyRequests{font-size:12px}.historyNotes{color:#555}
+
+/* Flow cards down each column without the empty space of grid rows. */
+@media print{
+ .bookingList.printTwoColumns{display:block!important;column-count:2!important;column-gap:5mm!important;column-fill:balance!important}
+ .bookingList.printTwoColumns .booking{display:inline-block!important;width:100%!important;margin:0 0 2mm!important;vertical-align:top}
+ .booking{overflow-wrap:anywhere}
+}
